@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-php
+  namespace: default
+  labels:
+    app: kube-php
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: "alb"
+spec:
+  externalTrafficPolicy: Local
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: kube-php
+  type: LoadBalancer
