@@ -9,6 +9,6 @@ docker buildx build --push --platform linux/amd64,linux/arm64 . --tag dylanops/k
 
 # Magento
 
-composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition:2.4.7 m247cc
+composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition:2.4.7 src
 
 minikube service hello-minikube --url
